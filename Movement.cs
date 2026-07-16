@@ -21,11 +21,11 @@ public class Movement : MonoBehaviour
 
     void Awake()
     {   
-        // Find the "Youwin" and "Youlose" GameObjects in the scene using their tags
+        // Cache the result-screen objects so they can be shown when the game ends.
         youwin= GameObject.FindWithTag("Youwin");
         youlose= GameObject.FindWithTag("Youlose");
 
-        // Set the "Youwin" and "Youlose" variables to inactive at the start of the game
+        // Keep the result screens hidden until the player wins or loses.
         youwin.SetActive(false);
         youlose.SetActive(false);
 
@@ -33,14 +33,13 @@ public class Movement : MonoBehaviour
 
     void Start()
     {   
-        // JoystickComp = joystick.GetComponent<Joystick>();
         JoystickComp = joystick.GetComponent<Joystick>();
     }
 
 
     void Update()
     {   
-        // Get the horizontal and vertical input values from the joystick component
+        // Read both joystick axes for movement.
         xinput = JoystickComp.Horizontal;
         yinput = JoystickComp.Vertical;
 
@@ -48,10 +47,10 @@ public class Movement : MonoBehaviour
     }
 
 
-// This method is called when the player collides with points or enemies.
+    // Responds when the player collides with a collectible or an enemy.
     public void OnCollisionEnter2D(Collision2D other)
     {
-        // Check if the collided object has the tag "Point"
+        // Add collected points to the score and trigger a win at the target score.
         if (other.gameObject.tag == "Point")
         {
             Destroy(other.gameObject);
@@ -64,7 +63,7 @@ public class Movement : MonoBehaviour
             }
         }
 
-        // Check if the collided object has the tag "Enemy"
+        // End the run when the player touches an enemy.
         if (other.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
@@ -72,14 +71,14 @@ public class Movement : MonoBehaviour
         }
     }
 
-// This coroutine is called when the player wins the game.
+    // Waits briefly before displaying the win screen.
     public IEnumerator YouWin()
     {
         yield return new WaitForSeconds(2f); 
         youwin.SetActive(true);
     }
 
-// This coroutine is called when the player loses the game.
+    // Waits briefly before displaying the lose screen.
      public IEnumerator YouLose()
     {
         yield return new WaitForSeconds(2f);
