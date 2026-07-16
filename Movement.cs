@@ -66,7 +66,6 @@ public class Movement : MonoBehaviour
         // End the run when the player touches an enemy.
         if (other.gameObject.tag == "Enemy")
         {
-            Destroy(gameObject);
             StartCoroutine(YouLose());
         }
     }
@@ -79,8 +78,16 @@ public class Movement : MonoBehaviour
     }
 
     // Waits briefly before displaying the lose screen.
-     public IEnumerator YouLose()
+    // The player is hidden instead of destroyed so this coroutine can keep running;
+    // destroying the GameObject would also kill this coroutine before the screen shows.
+    public IEnumerator YouLose()
     {
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+        if (sprite != null) sprite.enabled = false;
+
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = false;
+
         yield return new WaitForSeconds(2f);
         youlose.SetActive(true);
     }
