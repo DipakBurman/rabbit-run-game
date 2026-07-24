@@ -21,11 +21,11 @@ public class Movement : MonoBehaviour
 
     void Awake()
     {   
-        // Cache both result panels to avoid repeated scene lookups.
+        // Cache the result-screen objects so they can be shown when the game ends.
         youwin= GameObject.FindWithTag("Youwin");
         youlose= GameObject.FindWithTag("Youlose");
 
-        // Hide the result UI until the player wins or loses.
+        // Keep the result screens hidden until the player wins or loses.
         youwin.SetActive(false);
         youlose.SetActive(false);
 
@@ -39,7 +39,7 @@ public class Movement : MonoBehaviour
 
     void Update()
     {   
-        // Read the joystick direction used for this frame's movement.
+        // Read both joystick axes for movement.
         xinput = JoystickComp.Horizontal;
         yinput = JoystickComp.Vertical;
 
@@ -47,13 +47,10 @@ public class Movement : MonoBehaviour
     }
 
 
-    /// <summary>
-    /// Updates the score when a point is collected and starts the appropriate
-    /// result sequence when the player reaches the target or hits an enemy.
-    /// </summary>
+    // Responds when the player collides with a collectible or an enemy.
     public void OnCollisionEnter2D(Collision2D other)
     {
-        // Remove the collected point before updating the player's score.
+        // Add collected points to the score and trigger a win at the target score.
         if (other.gameObject.tag == "Point")
         {
             Destroy(other.gameObject);
@@ -66,25 +63,21 @@ public class Movement : MonoBehaviour
             }
         }
 
-        // Keep the player object alive so the lose coroutine can finish.
+        // Keep the player alive so the lose coroutine can finish.
         if (other.gameObject.tag == "Enemy")
         {
             StartCoroutine(YouLose());
         }
     }
 
-    /// <summary>
-    /// Displays the win panel after a short delay.
-    /// </summary>
+    // Waits briefly before displaying the win screen.
     public IEnumerator YouWin()
     {
         yield return new WaitForSeconds(2f); 
         youwin.SetActive(true);
     }
 
-    /// <summary>
-    /// Hides and disables the player, then displays the lose panel after a short delay.
-    /// </summary>
+    // Hides the player, then shows the lose screen after a short delay.
     public IEnumerator YouLose()
     {
         SpriteRenderer sprite = GetComponent<SpriteRenderer>();
