@@ -31,7 +31,7 @@ EditorSettings:
   m_GameObjectNamingDigits: 1
   m_GameObjectNamingScheme: 0
   m_AssetNamingUsesSpace: 1
-  m_InspectorUseIMGUIDefaultInspector: 0
+  m_InspectorUseIMGUIDefaultInspector: 1
   m_UseLegacyProbeSampleCount: 0
   m_SerializeInlineMappingsOnOneLine: 1
   m_DisableCookiesInLightmapper: 1
@@ -49,4 +49,4 @@ EditorSettings:
   m_EnableEnlightenBakedGI: 0
   m_ReferencedClipsExactNaming: 1
   m_ForceAssetUnloadAndGCOnSceneLoad: 1
-  m_HideBuildProfileClassicPlatforms: 1
+  m_HideBuildProfileClassicPlatforms: 0

@@ -6,16 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Game/Scene/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Resources/Scene/Menu.unity
+    guid: e35f12516ca720649a49e5a3ba008847
+  - enabled: 1
+    path: Assets/Resources/Scene/Game.unity
+    guid: d623c15681c382745a6d719da6255485
   m_configObjects:
-    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 5540ec5cb8cd02046b14f044791b60a2, type: 2}
-    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: f3beb161ab873964fb3eb0d8e2a89754, type: 2}
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: b7f31888f8a728545a789dd6bc40b1c2, type: 2}
+    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 8bc676eed5ce2ac4abc85e950ecf7a21, type: 2}
     com.unity.adaptivePerformance.basic.provider_settings: {fileID: 11400000, guid: 60287058ccfe40949bee1dea80544255, type: 2}
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: c7c10509b924d79448c9928ceb8f2d65, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 00baa74714931864490e44083b7e9c7f, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 842852637b5c94b40abc4f2e415aba02, type: 2}
+    com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 042d6e6830f42df49884cbab8b9d7280, type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c5edc276a6ce55648b35bc2df844c860, type: 2}
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 1ed13287543966a42b65576dba2181bc, type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 016ab4715b150a2418183de09db94626, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f7f9a77b352c8284db8f1250b5fc8085, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 65e286376afaf9047b212c576e961647, type: 2}

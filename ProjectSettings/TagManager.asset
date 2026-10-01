@@ -4,9 +4,14 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Point
   - Youwin
   - Youlose
+  - Point
+  - DARig
+  - Enemy
+  - Bullet
+  - PlayerGun
+  - EnemyGun
   layers:
   - Default
   - TransparentFX
