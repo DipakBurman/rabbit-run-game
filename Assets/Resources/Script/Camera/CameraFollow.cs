@@ -1,17 +1,21 @@
 using UnityEngine;
 
-public class FollowPlayer : MonoBehaviour
+public class CameraFollow : MonoBehaviour
 {
    
-    void Start()
+    public void Start()
     {
         
     }
 
 
-    void Update()
+    public void Update()
     {
         Vector3 CameraFollowPotion = new Vector3(0, 100);
         
     }
+}
+
+public class MonoBehaviour
+{
 }
