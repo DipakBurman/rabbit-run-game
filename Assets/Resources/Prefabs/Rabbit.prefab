@@ -90,7 +90,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1050118103390832000
 GameObject:
@@ -102,7 +102,6 @@ GameObject:
   m_Component:
   - component: {fileID: 167805783406467860}
   - component: {fileID: 1701923225065609233}
-  - component: {fileID: 5954088162703880344}
   - component: {fileID: 3403028757313973305}
   - component: {fileID: 3135839793255812661}
   - component: {fileID: 1563269274956999988}
@@ -189,20 +188,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &5954088162703880344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050118103390832000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02a4ac4208ea111489994c363669bc51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerShoot
-  bulletPrefab: {fileID: 8055165526131697413, guid: 41da431ff9d723b4ca518924de06c139, type: 3}
-  firePoint: {fileID: 0}
 --- !u!114 &3403028757313973305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,11 +213,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1812da125214d6f458d5d39df8973039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
-  joystick: {fileID: 0}
-  speed: 8
+  joystick: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+  speed: 0
   score: 0
-  WinScore: 3
-  extraScorePerLevel: 5
+  WinScore: 10
   youwin: {fileID: 0}
   youlose: {fileID: 0}
 --- !u!50 &1563269274956999988
@@ -479,5 +463,5 @@ SpriteRenderer:
   m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
