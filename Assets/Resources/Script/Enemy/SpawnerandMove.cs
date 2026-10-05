@@ -12,10 +12,13 @@ public class SpawnerandMove : MonoBehaviour
 
     [SerializeField] private float spawnOffsetFromPoint = 3f;
     [SerializeField] private float minDistanceFromPlayer = 4f;
+    [SerializeField] private float speedIncreasePerLevel = 0.15f;
 
     private Rigidbody2D enemyBody;
     private bool isGameOver;
     private Vector3 targetPosition;
+
+    public bool IsGameOver => isGameOver;
 
     private void Awake()
     {
@@ -26,6 +29,9 @@ public class SpawnerandMove : MonoBehaviour
         }
 
         instance = this;
+
+        // Each level makes the enemy a bit faster.
+        EnemySpeed *= 1f + (GameProgress.Level - 1) * speedIncreasePerLevel;
 
         if (player == null)
         {

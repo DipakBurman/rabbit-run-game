@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private float score = 0f;
     [SerializeField] private float WinScore = 10f;
+    [SerializeField] private float extraScorePerLevel = 5f;
 
     public GameObject youwin;
     public GameObject youlose;
@@ -22,8 +23,13 @@ public class Movement : MonoBehaviour
     private float xinput;
     private float yinput;
 
+    public bool IsGameOver => isGameOver;
+
     private void Awake()
     {
+        // Higher levels need more points to win.
+        WinScore += (GameProgress.Level - 1) * extraScorePerLevel;
+
         rb = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<Collider2D>();
 
@@ -95,8 +101,15 @@ public class Movement : MonoBehaviour
         }
         else if (other.CompareTag("Enemy"))
         {
-            StartCoroutine(YouLose());
+            Lose();
         }
+    }
+
+    // Called on enemy contact or when PlayerHealth runs out.
+    public void Lose()
+    {
+        if (isGameOver) return;
+        StartCoroutine(YouLose());
     }
 
 

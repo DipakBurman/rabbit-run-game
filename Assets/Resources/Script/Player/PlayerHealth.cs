@@ -6,6 +6,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (health <= 0) return;
+
         health -= damage;
 
         Debug.Log("Player Health: " + health);
@@ -18,6 +20,15 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        // Let Movement end the round so the lose screen still shows.
+        Movement movement = GetComponent<Movement>();
+        if (movement != null)
+        {
+            movement.Lose();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

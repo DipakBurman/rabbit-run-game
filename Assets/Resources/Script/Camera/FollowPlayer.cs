@@ -2,20 +2,16 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    public Transform player;   
-
-    void Awake()
+   
+    void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        
     }
 
-    void LateUpdate()
+
+    void Update()
     {
-        if (player == null)
-        {
-            return;
-        }
-        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+        Vector3 CameraFollowPotion = new Vector3(0, 100);
         
     }
 }
